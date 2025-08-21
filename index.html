@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokoro KIDS - Detalles del Contenido</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Busca o pregunta algo..." class="search-input">
+                <button class="filter-btn">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
+            </div>
+            <button class="menu-btn">
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-image-container">
+                    <img src="images/kokoro-kids.svg" alt="Kokoro KIDS" class="hero-image">
+                    <div class="hero-overlay">
+                        <div class="content-badge">
+                            <span class="category-tag">Learning</span>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <h1 class="content-title">Kokoro KIDS: Para niños y niñas con un futuro prometedor</h1>
+                    
+                    <div class="pricing-section">
+                        <div class="price-container">
+                            <span class="price">3.3€</span>
+                            <span class="price-period">/mes</span>
+                        </div>
+                        <div class="savings-badge">
+                            <span>Ahorra 20% anual</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <button class="btn-primary subscribe-btn">
+                            <i class="fas fa-play"></i>
+                            Subscribir
+                        </button>
+                        <button class="btn-secondary cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al carrito
+                        </button>
+                        <button class="btn-icon wishlist-btn">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Details -->
+            <section class="content-details">
+                <div class="details-tabs">
+                    <button class="tab-btn active" data-tab="overview">Descripción</button>
+                    <button class="tab-btn" data-tab="features">Características</button>
+                    <button class="tab-btn" data-tab="reviews">Reseñas</button>
+                </div>
+
+                <div class="tab-content active" id="overview">
+                    <div class="description">
+                        <p>App de aprendizaje y entretenimiento para niños de 2 a 6 años con cientos de juegos, videos y actividades que estimularán su memoria, atención, razonamiento e inteligencia emocional.</p>
+                        
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Desarrollo cognitivo</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-gamepad"></i>
+                                <span>Juegos interactivos</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-video"></i>
+                                <span>Videos educativos</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-child"></i>
+                                <span>Edad 2-6 años</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="features">
+                    <div class="features-list">
+                        <div class="feature-detail">
+                            <h3>Contenido Educativo</h3>
+                            <p>Más de 100 actividades diseñadas por expertos en desarrollo infantil</p>
+                        </div>
+                        <div class="feature-detail">
+                            <h3>Progreso Personalizado</h3>
+                            <p>Seguimiento del desarrollo y adaptación al ritmo de cada niño</p>
+                        </div>
+                        <div class="feature-detail">
+                            <h3>Modo Offline</h3>
+                            <p>Acceso a contenido descargado sin necesidad de conexión</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="reviews">
+                    <div class="reviews-summary">
+                        <div class="rating-overview">
+                            <span class="rating-score">4.8</span>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="review-count">1,234 reseñas</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations Section -->
+            <section class="recommendations">
+                <div class="section-header">
+                    <h2>Recomendaciones</h2>
+                    <button class="see-more-btn">
+                        Ver más
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="recommendations-grid">
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/24symbols.svg" alt="24symbols">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>24symbols</h3>
+                            <p>Lee cuando quieras, donde quieras y como quieras</p>
+                            <div class="card-price">2.99€/mes</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/kokoro-kids.svg" alt="Kokoro KIDS Premium">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Kokoro KIDS Premium</h3>
+                            <p>Para niños y niñas con un futuro prometedor</p>
+                            <div class="card-price">5.99€/mes</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/tv-shows.svg" alt="Televisión Consciente">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Televisión Consciente</h3>
+                            <p>Contenidos esenciales para tu bienestar</p>
+                            <div class="card-price">4.99€/mes</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/supergame.svg" alt="Superjuegos">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Superjuegos</h3>
+                            <p>Juegos Casual en modo scroll infinito</p>
+                            <div class="card-price">1.99€/mes</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categorías</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-leaf"></i>
+            <span>Descubrir</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrito</span>
+            <div class="cart-badge">1</div>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>

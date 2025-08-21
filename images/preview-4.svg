@@ -1,0 +1,32 @@
+<svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fa709a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fee140;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#bg4)"/>
+  
+  <!-- Activity interface mockup -->
+  <rect x="20" y="20" width="160" height="80" rx="10" fill="rgba(255,255,255,0.95)"/>
+  
+  <!-- Activity elements -->
+  <circle cx="60" cy="45" r="12" fill="#ff9800"/>
+  <text x="60" y="50" font-family="Arial" font-size="12" fill="white" text-anchor="middle">🎨</text>
+  
+  <circle cx="100" cy="45" r="12" fill="#2196f3"/>
+  <text x="100" y="50" font-family="Arial" font-size="12" fill="white" text-anchor="middle">🎵</text>
+  
+  <circle cx="140" cy="45" r="12" fill="#4caf50"/>
+  <text x="140" y="50" font-family="Arial" font-size="12" fill="white" text-anchor="middle">🧩</text>
+  
+  <!-- Activity labels -->
+  <text x="60" y="75" font-family="Arial" font-size="8" fill="#333" text-anchor="middle">Dibujar</text>
+  <text x="100" y="75" font-family="Arial" font-size="8" fill="#333" text-anchor="middle">Música</text>
+  <text x="140" y="75" font-family="Arial" font-size="8" fill="#333" text-anchor="middle">Puzzles</text>
+  
+  <!-- Stars rating -->
+  <g transform="translate(80, 85)">
+    <text x="0" y="0" font-family="Arial" font-size="12" fill="#ffc107">⭐⭐⭐</text>
+  </g>
+</svg>

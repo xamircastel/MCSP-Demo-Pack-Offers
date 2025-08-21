@@ -1,0 +1,30 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="tv-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#EF4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#DC2626;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="url(#tv-gradient)"/>
+  
+  <!-- TV screens -->
+  <rect x="50" y="50" width="60" height="40" fill="white" rx="5"/>
+  <rect x="55" y="55" width="50" height="30" fill="#1F2937"/>
+  <circle cx="80" cy="100" r="3" fill="white"/>
+  
+  <rect x="130" y="40" width="60" height="40" fill="white" rx="5"/>
+  <rect x="135" y="45" width="50" height="30" fill="#1F2937"/>
+  <circle cx="160" cy="90" r="3" fill="white"/>
+  
+  <rect x="210" y="60" width="60" height="40" fill="white" rx="5"/>
+  <rect x="215" y="65" width="50" height="30" fill="#1F2937"/>
+  <circle cx="240" cy="110" r="3" fill="white"/>
+  
+  <text x="150" y="140" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Televisión
+  </text>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Consciente
+  </text>
+</svg>

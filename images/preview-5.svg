@@ -1,0 +1,32 @@
+<svg width="200" height="120" viewBox="0 0 200 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a8edea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fed6e3;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="200" height="120" fill="url(#bg5)"/>
+  
+  <!-- Story interface mockup -->
+  <rect x="15" y="15" width="170" height="90" rx="8" fill="rgba(255,255,255,0.9)"/>
+  
+  <!-- Book pages -->
+  <rect x="25" y="25" width="70" height="70" rx="4" fill="#fff"/>
+  <rect x="105" y="25" width="70" height="70" rx="4" fill="#fff"/>
+  
+  <!-- Left page content -->
+  <rect x="30" y="35" width="40" height="30" rx="2" fill="#e8f5e8"/>
+  <rect x="35" y="70" width="50" height="3" rx="1" fill="#666"/>
+  <rect x="35" y="78" width="40" height="3" rx="1" fill="#999"/>
+  <rect x="35" y="86" width="30" height="3" rx="1" fill="#ccc"/>
+  
+  <!-- Right page content -->
+  <rect x="110" y="35" width="40" height="30" rx="2" fill="#fff3e0"/>
+  <rect x="115" y="70" width="50" height="3" rx="1" fill="#666"/>
+  <rect x="115" y="78" width="40" height="3" rx="1" fill="#999"/>
+  <rect x="115" y="86" width="35" height="3" rx="1" fill="#ccc"/>
+  
+  <!-- Navigation arrows -->
+  <polygon points="10,60 20,50 20,70" fill="#6366f1"/>
+  <polygon points="190,60 180,50 180,70" fill="#6366f1"/>
+</svg>

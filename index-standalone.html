@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kokoro KIDS - Detalles del Contenido</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: rgb(119, 234, 9);
+            --primary-dark: rgb(95, 187, 7);
+            --secondary-color: #f59e0b;
+            --success-color: #10b981;
+            --error-color: #ef4444;
+            --warning-color: #f59e0b;
+            --text-primary: #111827;
+            --text-secondary: #6b7280;
+            --text-muted: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-tertiary: #f3f4f6;
+            --border-color: #e5e7eb;
+            --border-light: #f3f4f6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        /* Header */
+        .header {
+            position: sticky;
+            top: 0;
+            background: #000000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+            padding: var(--spacing-md) 0;
+        }
+
+        .header .container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .back-btn {
+            background: none;
+            border: none;
+            padding: var(--spacing-sm);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .back-btn i {
+            font-size: 16px;
+        }
+
+        .search-container {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-sm) var(--spacing-md);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            height: 40px;
+            max-width: 100%;
+            min-width: 0;
+        }
+
+        .search-container:focus-within {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .search-icon {
+            color: rgba(255, 255, 255, 0.7);
+            margin-right: var(--spacing-sm);
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .search-input {
+            flex: 1;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 15px;
+            color: white;
+            font-weight: 400;
+            min-width: 0;
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .filter-btn {
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.7);
+            cursor: pointer;
+            padding: var(--spacing-xs);
+            margin-left: var(--spacing-sm);
+            border-radius: var(--radius-sm);
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+        }
+
+        .filter-btn:hover {
+            color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .filter-btn i {
+            font-size: 13px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-bottom: 80px;
+            padding-top: var(--spacing-lg);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .hero-image-container {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, rgb(119, 234, 9) 0%, rgb(95, 187, 7) 100%);
+            min-height: 300px;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: var(--spacing-lg);
+        }
+
+        .content-badge {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .category-tag {
+            background: linear-gradient(135deg, rgb(119, 234, 9), rgb(95, 187, 7)) !important;
+            color: white !important;
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-weight: 700;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Content */
+        .hero-content {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+            box-shadow: var(--shadow-lg);
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .content-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .pricing-section {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: baseline;
+            gap: var(--spacing-xs);
+        }
+
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .price-period {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-primary, .btn-secondary, .btn-icon {
+            border: none;
+            border-radius: var(--radius-lg);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: var(--spacing-md) var(--spacing-xl);
+            flex: 1;
+            justify-content: center;
+            min-width: 140px;
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: var(--spacing-md) var(--spacing-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .btn-icon {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            min-width: 48px;
+            justify-content: center;
+        }
+
+        /* Preview Gallery */
+        .preview-gallery {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .gallery-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .gallery-counter {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--radius-lg);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-lg);
+        }
+
+        .gallery-scroll {
+            display: flex;
+            gap: var(--spacing-md);
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: var(--spacing-xs);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .gallery-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .preview-item {
+            position: relative;
+            flex-shrink: 0;
+            width: 200px;
+            height: 120px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--bg-secondary);
+        }
+
+        .preview-item:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .preview-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .preview-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .preview-item:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .preview-play-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .preview-play-btn:hover {
+            background: white;
+            transform: scale(1.1);
+        }
+
+        .preview-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: var(--spacing-md) var(--spacing-sm) var(--spacing-sm);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* Content Details */
+        .content-details {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .details-tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: var(--spacing-lg);
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: var(--spacing-md) var(--spacing-lg);
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .description {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Recommendations */
+        .recommendations {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .carousel-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .carousel-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+        }
+
+        .carousel-btn:disabled:hover {
+            background: var(--bg-secondary);
+            color: var(--text-muted);
+            border-color: var(--border-color);
+        }
+
+        .see-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-weight: 500;
+            margin-left: var(--spacing-md);
+        }
+
+        .recommendations-grid {
+            display: flex;
+            gap: var(--spacing-lg);
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: var(--spacing-sm);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .recommendations-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .recommendation-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+            width: 220px;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-image {
+            position: relative;
+            height: 140px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .recommendation-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+        }
+
+        .card-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .card-content p {
+            color: var(--text-secondary);
+            font-size: 13px;
+            line-height: 1.4;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .card-price {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 16px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--bg-primary);
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-around;
+            padding: var(--spacing-sm) 0;
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-xs);
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 500;
+            padding: var(--spacing-xs);
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+            position: relative;
+            min-width: 60px;
+        }
+
+        .nav-item i {
+            font-size: 20px;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: 8px;
+            background: var(--error-color);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .main-content {
+                padding-top: var(--spacing-md);
+            }
+            
+            .header {
+                padding: var(--spacing-sm) 0;
+            }
+            
+            .header .container {
+                gap: var(--spacing-sm);
+            }
+            
+            .search-container {
+                padding: var(--spacing-xs) var(--spacing-sm);
+                height: 36px;
+                border-radius: var(--radius-md);
+            }
+            
+            .back-btn {
+                min-width: 36px;
+                height: 36px;
+                padding: var(--spacing-xs);
+            }
+            
+            .back-btn i {
+                font-size: 15px;
+            }
+            
+            .search-input {
+                font-size: 14px;
+            }
+            
+            .search-icon {
+                font-size: 13px;
+                margin-right: var(--spacing-xs);
+            }
+            
+            .filter-btn {
+                min-width: 24px;
+                height: 24px;
+                padding: var(--spacing-xs);
+                margin-left: var(--spacing-xs);
+            }
+            
+            .filter-btn i {
+                font-size: 11px;
+            }
+            
+            /* Mobile spacing optimizations */
+            .hero-section {
+                margin-bottom: var(--spacing-lg);
+            }
+            
+            .hero-image-container {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .content-title {
+                font-size: 24px;
+                margin-bottom: 6px;
+            }
+            
+            .pricing-section {
+                margin-bottom: var(--spacing-sm);
+            }
+            
+            .hero-content {
+                margin-top: -20px;
+                padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+            }
+            
+            .content-details {
+                margin-bottom: var(--spacing-lg);
+            }
+            
+            /* Mobile gallery optimizations */
+            .preview-gallery {
+                margin-bottom: var(--spacing-lg);
+            }
+            
+            .gallery-title {
+                font-size: 18px;
+            }
+            
+            .gallery-counter {
+                font-size: 12px;
+                padding: 4px var(--spacing-sm);
+            }
+            
+            .preview-item {
+                width: 160px;
+                height: 100px;
+            }
+            
+            .gallery-scroll {
+                gap: var(--spacing-sm);
+            }
+            
+            .preview-caption {
+                font-size: 11px;
+                padding: var(--spacing-sm) var(--spacing-xs) var(--spacing-xs);
+            }
+            
+            .preview-play-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Mobile carousel optimizations */
+            .recommendations-grid {
+                gap: var(--spacing-md);
+            }
+            
+            .recommendation-card {
+                width: 180px;
+            }
+
+            .card-image {
+                height: 120px;
+            }
+
+            .card-content {
+                padding: var(--spacing-sm);
+            }
+
+            .card-content h3 {
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+
+            .card-content p {
+                font-size: 12px;
+                margin-bottom: 8px;
+            }
+
+            .card-price {
+                font-size: 14px;
+            }
+            
+            .carousel-controls {
+                gap: var(--spacing-xs);
+            }
+            
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+            }
+            
+            .see-more-btn {
+                font-size: 14px;
+                margin-left: var(--spacing-sm);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container">
+            <button class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Busca o pregunta algo..." class="search-input">
+                <button class="filter-btn">
+                    <i class="fas fa-sliders-h"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-image-container">
+                    <img src="images/kokoro-kids.svg" alt="Kokoro KIDS" class="hero-image">
+                    <div class="hero-overlay">
+                        <div class="content-badge">
+                            <span class="category-tag">Learning</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-content">
+                    <h1 class="content-title">Kokoro KIDS: Para niños y niñas con un futuro prometedor</h1>
+                    
+                    <div class="pricing-section">
+                        <div class="price-container">
+                            <span class="price">3.3€</span>
+                            <span class="price-period">/mes</span>
+                        </div>
+                    </div>
+
+                    <div class="cta-buttons">
+                        <button class="btn-primary subscribe-btn">
+                            <i class="fas fa-play"></i>
+                            Subscribir
+                        </button>
+                        <button class="btn-secondary cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            Añadir al carrito
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview Gallery -->
+            <section class="preview-gallery">
+                <div class="gallery-header">
+                    <h2 class="gallery-title">Vista previa del contenido</h2>
+                    <span class="gallery-counter">5 capturas</span>
+                </div>
+                
+                <div class="gallery-container">
+                    <div class="gallery-scroll">
+                        <div class="preview-item">
+                            <img src="images/preview-1.svg" alt="Juegos interactivos">
+                            <div class="preview-overlay">
+                                <button class="preview-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="preview-caption">Juegos interactivos</div>
+                        </div>
+                        
+                        <div class="preview-item">
+                            <img src="images/preview-2.svg" alt="Actividades de aprendizaje">
+                            <div class="preview-overlay">
+                                <button class="preview-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="preview-caption">Actividades de aprendizaje</div>
+                        </div>
+                        
+                        <div class="preview-item">
+                            <img src="images/preview-3.svg" alt="Videos educativos">
+                            <div class="preview-overlay">
+                                <button class="preview-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="preview-caption">Videos educativos</div>
+                        </div>
+                        
+                        <div class="preview-item">
+                            <img src="images/preview-4.svg" alt="Actividades creativas">
+                            <div class="preview-overlay">
+                                <button class="preview-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="preview-caption">Actividades creativas</div>
+                        </div>
+                        
+                        <div class="preview-item">
+                            <img src="images/preview-5.svg" alt="Cuentos interactivos">
+                            <div class="preview-overlay">
+                                <button class="preview-play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                            <div class="preview-caption">Cuentos interactivos</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Details -->
+            <section class="content-details">
+                <div class="details-tabs">
+                    <button class="tab-btn active" data-tab="overview">Descripción</button>
+                </div>
+
+                <div class="tab-content active" id="overview">
+                    <div class="description">
+                        <p>App de aprendizaje y entretenimiento para niños de 2 a 6 años con cientos de juegos, videos y actividades que estimularán su memoria, atención, razonamiento e inteligencia emocional.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations Section -->
+            <section class="recommendations">
+                <div class="section-header">
+                    <h2>Recomendaciones</h2>
+                    <div class="carousel-controls">
+                        <button class="carousel-btn" id="prevBtn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="carousel-btn" id="nextBtn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                        <button class="see-more-btn">
+                            Ver más
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="recommendations-grid" id="recommendationsCarousel">
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/24symbols.svg" alt="24symbols">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>24symbols</h3>
+                            <p>Lee cuando quieras, donde quieras y como quieras</p>
+                            <div class="card-price">2.99€/mes</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/kokoro-kids.svg" alt="Kokoro KIDS Premium">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Kokoro KIDS Premium</h3>
+                            <p>Para niños y niñas con un futuro prometedor</p>
+                            <div class="card-price">5.99€/mes</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/tv-shows.svg" alt="Televisión Consciente">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Televisión Consciente</h3>
+                            <p>Contenidos esenciales para tu bienestar</p>
+                            <div class="card-price">4.99€/mes</div>
+                        </div>
+                    </div>
+
+                    <div class="recommendation-card">
+                        <div class="card-image">
+                            <img src="images/supergame.svg" alt="Superjuegos">
+                            <div class="card-overlay">
+                                <button class="play-btn">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Superjuegos</h3>
+                            <p>Juegos Casual en modo scroll infinito</p>
+                            <div class="card-price">1.99€/mes</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="#" class="nav-item">
+            <i class="fas fa-home"></i>
+            <span>Inicio</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-th-large"></i>
+            <span>Categorías</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-leaf"></i>
+            <span>Descubrir</span>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrito</span>
+            <div class="cart-badge">1</div>
+        </a>
+        <a href="#" class="nav-item">
+            <i class="fas fa-user"></i>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked tab and corresponding content
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+
+            // Carousel functionality
+            const carousel = document.getElementById('recommendationsCarousel');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            function getCardWidth() {
+                // Check if we're on mobile (screen width < 768px)
+                return window.innerWidth < 768 ? 180 : 220;
+            }
+            
+            function getScrollAmount() {
+                const cardWidth = getCardWidth();
+                const gap = 24; // Gap between cards
+                return cardWidth + gap;
+            }
+
+            // Check if we can scroll
+            function updateButtons() {
+                const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+                prevBtn.disabled = carousel.scrollLeft <= 0;
+                nextBtn.disabled = carousel.scrollLeft >= maxScrollLeft - 5; // Small tolerance
+            }
+
+            // Scroll to previous card
+            prevBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: -getScrollAmount(),
+                    behavior: 'smooth'
+                });
+            });
+
+            // Scroll to next card
+            nextBtn.addEventListener('click', () => {
+                carousel.scrollBy({
+                    left: getScrollAmount(),
+                    behavior: 'smooth'
+                });
+            });
+
+            // Update button states when scrolling
+            carousel.addEventListener('scroll', updateButtons);
+            
+            // Initial button state
+            updateButtons();
+
+            // Update buttons on window resize
+            window.addEventListener('resize', updateButtons);
+        });
+    </script>
+</body>
+</html>
