@@ -176,24 +176,88 @@
             padding-bottom: 100px;
         }
 
-        /* Pack Hero Section */
+        /* Pack Hero Section - Enhanced */
         .pack-hero {
-            background: linear-gradient(135deg, rgb(119, 234, 9) 0%, rgb(95, 187, 7) 100%);
+            background: linear-gradient(135deg, rgb(119, 234, 9) 0%, rgb(95, 187, 7) 50%, rgb(75, 150, 5) 100%);
             border-radius: var(--radius-xl);
             overflow: hidden;
-            margin-bottom: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
             position: relative;
             color: white;
-            padding: var(--spacing-lg) var(--spacing-xl);
+            padding: var(--spacing-xl) var(--spacing-2xl);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            min-height: 120px;
-            box-shadow: var(--shadow-lg);
+            min-height: 140px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 
+                0 25px 50px rgba(119, 234, 9, 0.5), 
+                0 15px 35px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 60px rgba(119, 234, 9, 0.3);
+            animation: packHeroEntrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transform: translateZ(0);
+        }
+
+        .pack-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transform: rotate(45deg);
+            animation: shimmer 4s infinite;
+        }
+
+        .pack-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .pack-info {
             flex: 1;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Pack Hero Animations */
+        @keyframes packHeroEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px) scale(0.95);
+                box-shadow: 0 0 0 rgba(119, 234, 9, 0);
+            }
+            50% {
+                transform: translateY(-10px) scale(0.98);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                box-shadow: 
+                    0 25px 50px rgba(119, 234, 9, 0.5), 
+                    0 15px 35px rgba(0, 0, 0, 0.2),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                    0 0 60px rgba(119, 234, 9, 0.3);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(45deg);
+            }
         }
 
         .pack-cta {
@@ -225,16 +289,20 @@
         }
 
         .pack-title {
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: var(--spacing-sm);
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 8px;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+            letter-spacing: -0.5px;
+            line-height: 1.1;
         }
 
         .pack-price {
-            font-size: 24px;
-            font-weight: 700;
-            opacity: 0.95;
+            font-size: 28px;
+            font-weight: 800;
+            opacity: 1;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            letter-spacing: -0.3px;
         }
 
         .pack-subscribe-btn {
@@ -514,7 +582,7 @@
             display: flex;
             gap: var(--spacing-md);
             justify-content: center;
-            margin-top: var(--spacing-lg);
+            margin-top: var(--spacing-md);
         }
 
         .btn-primary, .btn-secondary {
@@ -551,6 +619,35 @@
         }
 
         .btn-secondary:hover {
+            background: var(--bg-tertiary);
+            transform: translateY(-1px);
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .btn-icon {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            padding: var(--spacing-md);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            min-width: 48px;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            font-weight: 600;
+        }
+
+        .btn-icon:hover {
             background: var(--bg-tertiary);
             transform: translateY(-1px);
         }
@@ -718,32 +815,48 @@
             .pack-info {
                 flex: 1;
                 min-width: 0;
+                text-align: left;
             }
 
             .pack-cta {
                 margin-left: var(--spacing-md);
                 flex-shrink: 0;
+                flex-direction: column;
+                align-items: center;
+                gap: var(--spacing-xs);
             }
 
-            .pack-title {
-                font-size: 18px;
-                margin-bottom: 4px;
-                line-height: 1.3;
+            .cta-buttons {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+                width: 100%;
+                margin-top: var(--spacing-sm);
             }
 
-            .pack-price {
-                font-size: 16px;
-                font-weight: 600;
-            }
-
-            .pack-subscribe-btn {
+            .btn-primary, .btn-secondary {
                 padding: var(--spacing-sm) var(--spacing-md);
                 font-size: 14px;
                 min-width: 100px;
+                justify-content: center;
             }
 
-            .pack-subscribe-btn i {
+            .btn-primary i, .btn-secondary i {
                 font-size: 12px;
+            }
+
+            .pack-title {
+                font-size: 20px;
+                margin-bottom: 2px;
+                line-height: 1.2;
+                font-weight: 900;
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+                letter-spacing: -0.3px;
+            }
+
+            .pack-price {
+                font-size: 18px;
+                font-weight: 700;
+                text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
             }
 
             .savings-badge {
@@ -882,6 +995,7 @@
             font-size: 12px;
             padding: var(--spacing-xs);
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-item.active {
@@ -891,6 +1005,162 @@
         .nav-item i {
             font-size: 18px;
             margin-bottom: 2px;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -2px;
+            right: 8px;
+            background: var(--error-color);
+            color: white;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 10px;
+            min-width: 18px;
+            text-align: center;
+        }
+
+        /* Recommendations */
+        .recommendations {
+            margin-bottom: var(--spacing-md);
+            padding: var(--spacing-lg);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-header h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: var(--spacing-sm);
+            align-items: center;
+        }
+
+        .carousel-btn {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: var(--text-secondary);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        .see-more-btn {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            font-weight: 500;
+            margin-left: var(--spacing-md);
+        }
+
+        .recommendations-grid {
+            display: flex;
+            gap: var(--spacing-lg);
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding-bottom: var(--spacing-sm);
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .recommendations-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .recommendation-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+            width: 220px;
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .card-image {
+            position: relative;
+            height: 140px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .recommendation-card:hover .card-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .card-content {
+            padding: var(--spacing-md);
+        }
+
+        .card-content h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
         }
     </style>
 </head>
@@ -920,10 +1190,16 @@
                 <div class="pack-price">€5.50</div>
             </div>
             <div class="pack-cta">
-                <button class="pack-subscribe-btn">
-                    <i class="fas fa-play"></i>
-                    Subscribe
-                </button>
+                <div class="cta-buttons">
+                    <button class="btn-primary subscribe-btn">
+                        <i class="fas fa-play"></i>
+                        Subscribe
+                    </button>
+                    <button class="btn-secondary cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        Añadir al carrito
+                    </button>
+                </div>
                 <div class="savings-badge">¡Ahorra 37%!</div>
             </div>
         </section>
@@ -1062,6 +1338,83 @@
                 </div>
             </div>
         </section>
+
+        <!-- Recommendations Section -->
+        <section class="recommendations">
+            <div class="section-header">
+                <h2>Recomendaciones</h2>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="see-more-btn">
+                        Ver más
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="recommendations-grid" id="recommendationsCarousel">
+                <div class="recommendation-card">
+                    <div class="card-image">
+                        <img src="images/24symbols.svg" alt="24symbols">
+                        <div class="card-overlay">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>24symbols</h3>
+                    </div>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-image">
+                        <img src="images/kokoro-kids.svg" alt="Kokoro KIDS Premium">
+                        <div class="card-overlay">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Kokoro KIDS Premium</h3>
+                    </div>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-image">
+                        <img src="images/tv-shows.svg" alt="Televisión Consciente">
+                        <div class="card-overlay">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Televisión Consciente</h3>
+                    </div>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="card-image">
+                        <img src="images/supergame.svg" alt="Superjuegos">
+                        <div class="card-overlay">
+                            <button class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <h3>Superjuegos</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Bottom Navigation -->
@@ -1079,8 +1432,9 @@
             <span>Packs</span>
         </a>
         <a href="#" class="nav-item">
-            <i class="fas fa-bookmark"></i>
-            <span>Guardados</span>
+            <i class="fas fa-shopping-cart"></i>
+            <span>Carrito</span>
+            <div class="cart-badge">1</div>
         </a>
         <a href="#" class="nav-item">
             <i class="fas fa-user"></i>
